@@ -6,7 +6,10 @@ class Play < ActiveRecord::Base
      "U"=>1, "V"=>4, "W"=>4, "X"=>8, "Y"=>4, "Z"=>10}
   end
 
-  def score
-    word.upcase.chars.inject(0){|sum, letter| sum + letter_scores[letter]}
+  def score(word)
+    if word != ""
+      word.upcase.chars.inject(0){|sum, letter| sum + letter_scores[letter]}
+    end
   end
+
 end
