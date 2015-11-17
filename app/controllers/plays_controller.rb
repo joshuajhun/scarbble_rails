@@ -20,6 +20,11 @@ class PlaysController < ApplicationController
   def edit
   end
 
+  def destroy
+    @play = Play.delete(params[:id])
+    redirect_to plays_path
+  end
+
 
 private
   def play_params
