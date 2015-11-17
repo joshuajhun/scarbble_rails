@@ -9,11 +9,11 @@ class PlaysController < ApplicationController
 
   def create
     @play = Play.new(play_params)
-    if @play.save unless @play.word == ''
+    if @play.save
       redirect_to plays_path
     else
-      flash[:errors] = "blank"
-      redirect_to new_play_path
+      flash.now[:errors] = "blank"
+      render :new
     end
   end
 

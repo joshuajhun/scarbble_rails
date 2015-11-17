@@ -20,7 +20,6 @@ class MakeAPlayTest < ActionDispatch::IntegrationTest
     fill_in 'play[word]', :with => ""
     click_link_or_button 'Play!'
 
-
     within('#errors') do
       assert page.has_content?('blank')
     end
@@ -33,7 +32,7 @@ class MakeAPlayTest < ActionDispatch::IntegrationTest
   end
 
   def test_words_with_non_letters_are_rejected
-    skip
+
     visit '/plays'
     click_link_or_button 'Play New Word'
 

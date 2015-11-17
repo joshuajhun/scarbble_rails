@@ -3,3 +3,6 @@
 <%= f.text_field :word %>
 <%= f.submit "Play!" %>
 <% end %>
+<ul id="errors">
+<%= flash.now[:errors] %>
+</ul>

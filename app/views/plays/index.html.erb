@@ -1,4 +1,3 @@
-
 <h1>Scrabble-Web</h1>
 
 <%= link_to "Play New Word", new_play_path %>
@@ -9,8 +8,5 @@
     <% @plays.each do |play| %>
     <li> <%= play.word.downcase %> <%= play.score(play.word) %>  </li>
     <%end %>
-  </ul>
-  <ul id="errors">
-<%= flash[:errors] = "blank" %>
-  </ul>
+
 </div>
